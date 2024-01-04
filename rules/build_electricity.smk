@@ -212,7 +212,7 @@ rule determine_availability_matrix_MD_UA:
         wdpa="data/WDPA.gpkg",
         wdpa_marine="data/WDPA_WDOECM_marine.gpkg",
         gebco=lambda w: (
-            "data/bundle/GEBCO_2014_2D.nc"
+            "data/bundle/GEBCO_2021_TID.nc"
             if "max_depth" in config["renewable"][w.technology].keys()
             else []
         ),
@@ -275,7 +275,7 @@ rule build_renewable_profiles:
         ),
         gebco=ancient(
             lambda w: (
-                "data/bundle/GEBCO_2014_2D.nc"
+                "data/bundle/GEBCO_2021_TID.nc"
                 if config["renewable"][w.technology].get("max_depth")
                 else []
             )
